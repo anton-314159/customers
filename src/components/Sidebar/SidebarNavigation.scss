@@ -1,0 +1,68 @@
+@import '../../scss/colors.scss';
+
+.sidebar-nav {
+    margin: 32px 26px 0 26px;
+
+    &-cat {
+      margin: 0 0 35px 0;
+
+      &-title {
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 15px;
+        text-transform: uppercase;
+        color: #202020;
+
+        .toggle & {
+          display: none;
+        }        
+      }
+    }
+
+    &-item {
+      margin: 20px 0 0 0;
+      display: flex;
+      align-items: flex-start;
+      cursor: pointer;
+      text-decoration: none;
+
+      &-ico {
+        width: 20px;
+        height: 20px;
+        margin: 0 16px 0 0;
+
+        .toggle & {
+          margin: 0;
+        }
+
+       /* background-color: #545453;
+        mask-repeat: no-repeat;
+        mask-position: center center;
+
+        :hover > & {
+          background-color: #62B839;
+        }*/
+        text-align: center;
+        img {
+
+        }
+      }
+
+      &-title {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 17px;
+        letter-spacing: -0.01em;          
+        color: #545453;
+
+        .toggle & {
+          display: none;
+        }         
+
+        &.active,
+        &:hover {
+          color: $color-green;
+        }
+      }
+    }
+  }

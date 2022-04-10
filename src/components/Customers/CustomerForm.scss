@@ -1,0 +1,106 @@
+@import '../../scss/colors.scss';
+
+.customer-form {
+    z-index: 1005;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.3);
+
+    &-wrap {
+        display: flex;
+        height: 100%;    
+        overflow: hidden;
+
+        &.left {   
+            width: 100%;         
+        }
+
+        &.right {
+            min-width: 800px;
+            margin-right: -860px;
+            background-color: #fff;           
+            margin-left: auto;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            transition: margin-right .2s ease-in-out;
+            padding: 20px 30px;
+
+            &.show {
+                margin-right: 0;
+            }
+        }
+    }
+
+        .form-title {
+            font-size: 24px;
+            position: relative;
+
+            &-close {
+                background: #F5F5F5;
+                border-radius: 50%;
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 32px;
+                height: 32px;
+                cursor: pointer;
+                transition: background-color .1s ease-in-out;
+
+                &:hover {
+                    background: #333;
+
+                    &:before {
+                        color: #fff;
+                    }
+                }
+
+                &:before {
+                    content: '\2715';
+                    color: #333;
+                    font-size: 18px;
+                    position: absolute;
+                    font-weight: bold;
+                    top: 4px;
+                    left: 8px;
+                    transition: color .1s ease-in-out;
+                }
+            }
+        }
+
+        .form-content {
+            display: flex;
+            padding: 40px 0 0 0;
+
+            &-left {
+                width: 50%;
+                padding: 0 20px 0 0;
+            }
+
+            &-right {
+                width: 50%;
+                padding: 0 0 0 20px;
+            }
+
+            &-item {
+                padding: 0 0 20px;
+
+                &-label {
+                    padding: 0 0 5px;
+                    color: #333;
+                }
+            }
+        }
+
+        .form-actions {
+            display: flex;
+            justify-content: flex-end;
+
+            .btn {
+                margin-left: 20px;
+            }
+        }
+    }

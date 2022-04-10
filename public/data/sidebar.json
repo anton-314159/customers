@@ -1,0 +1,68 @@
+[
+    {
+        "title": "Workspace",
+        "items": [{
+            "ico": "/customers/images/sidebar/my-time.svg",
+            "title": "My Time",
+            "url": "/my-time"
+        },{
+            "ico": "/customers/images/sidebar/my-expenses.svg",
+            "title": "My Expenses",
+            "url": "/my-expenses"
+        },{
+            "ico": "/customers/images/sidebar/approve-timesheets.svg",
+            "title": "Approve Timesheets",
+            "url": "/approve-timesheets"
+        }]
+    }, {
+        "title": "Administration",
+        "items": [{
+            "ico": "/customers/images/sidebar/dashboard.svg",
+            "title": "Dashboard",
+            "url": "/dashboard"
+        },{
+            "ico": "/customers/images/sidebar/timesheets.svg",
+            "title": "Timesheets",
+            "url": "/timesheets"
+        },{
+            "ico": "/customers/images/sidebar/expenses.svg",
+            "title": "Expenses",
+            "url": "/expenses"
+        }, {
+            "ico": "/customers/images/sidebar/invoice.svg",
+            "title": "Invoices",
+            "url": "/invoices"
+        },{
+            "ico": "/customers/images/sidebar/employees.svg",
+            "title": "Employees",
+            "url": "/employees"
+        },{
+            "ico": "/customers/images/sidebar/customers.svg",
+            "title": "Customers",
+            "url": ""
+        },{
+            "ico": "/customers/images/sidebar/list.svg",
+            "title": "List",
+            "url": "/list"
+        },{
+            "ico": "/customers/images/sidebar/setup.svg",
+            "title": "Setup",
+            "url": "/setup"
+        },{
+            "ico": "/customers/images/sidebar/reports.svg",
+            "title": "Reports",
+            "url": "/reports"
+        }]
+    }, {
+        "title": "Integration",
+        "items": [{
+            "ico": "/customers/images/sidebar/quick-books.svg",
+            "title": "Quick Books",
+            "url": "/quick-books"
+        },{
+            "ico": "/customers/images/sidebar/bamboo-hr.svg",
+            "title": "Bamboo HR",
+            "url": "/bamboo-hr"
+        }]
+    }
+]

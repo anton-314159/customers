@@ -1,0 +1,79 @@
+@import '../../../scss/colors.scss';
+
+.select {
+    position: relative;
+    border: 1px solid $color-border-inactive;
+    padding: 5px 20px 5px 10px;
+    border-radius: 5px;     
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 20px; 
+    
+    &:after {
+        content: '\2304';
+        font-size: 16px;
+        font-weight: 600;
+        position: absolute;
+        top: 0px;
+        right: 10px;
+        color: $color-text;
+
+    }
+
+    &.expanded {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+
+        &:after {
+            content: '\2303';
+            top: 8px;           
+        }        
+    }
+
+    &-title {
+        color: $color-text;
+        overflow: hidden;
+    }
+
+    &.expanded,
+    &:hover {
+        outline: 1px solid $color-border-active;
+        border: 1px solid $color-border-active;
+    }
+
+    &-options {
+        display: none;
+        position: absolute;
+
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        border: 2px solid $color-border-active;
+
+        background-color: #ffffff;
+        left: -2px;
+        top: 30px;
+        width: 100%;
+        z-index: 1000;
+
+        .expanded & {
+            display: block;
+        }
+    }
+
+    &-option {
+        cursor: pointer;       
+
+        padding: 5px 10px;
+
+
+        &:last-child {
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }        
+
+        &:hover {
+            background-color: $color-green;
+            color: #ffffff;
+        }
+    }
+}
