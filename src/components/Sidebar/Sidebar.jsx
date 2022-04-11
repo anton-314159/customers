@@ -24,8 +24,7 @@ class Sidebar extends React.Component {
   }
 
   btnCreactClick() {
-    /*if (this.props.customerShowForm)
-      this.props.customerShowForm();*/
+    // this.props.customerShowForm();
 
     this.props.history.push('/new');
   }
@@ -63,4 +62,5 @@ class Sidebar extends React.Component {
     )
   }
 }
+
 export default withRouter(Sidebar);

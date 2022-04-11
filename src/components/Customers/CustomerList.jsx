@@ -1,5 +1,5 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 
 import './CustomerList.scss';
@@ -50,13 +50,11 @@ class CustomerList extends React.Component {
   onSyncClick() {
     const { customerFormVisible, customerHideForm, customerLoadData } = this.props;
 
-    if (customerFormVisible && customerHideForm) {
+    if (customerFormVisible) {
       customerHideForm();
     }
 
-    if (customerLoadData) {
-      customerLoadData(); 
-    }
+    customerLoadData(); 
   }
 
   onSearchChange(e) {
@@ -66,9 +64,7 @@ class CustomerList extends React.Component {
   }
 
   onCreatClick() {
- /*   if (this.props.customerShowForm)
-      this.props.customerShowForm();
-*/
+    // this.props.customerShowForm();
       this.props.history.push(`/new`);
   }
 
@@ -82,9 +78,8 @@ class CustomerList extends React.Component {
     const { selectedItems } = this.state;
 
     if (selectedItems.length === 1) {
-/*      if (this.props.customerShowForm) {
-        this.props.customerShowForm(selectedItems[0]);
-*/
+        // this.props.customerShowForm(selectedItems[0]);
+
         this.props.history.push(`/edit/${selectedItems[0].id}`);
       }
   }
@@ -93,13 +88,11 @@ class CustomerList extends React.Component {
     const { selectedItems } = this.state;
 
     if (selectedItems.length) {
-      if (this.props.customerDeleteItems) {
         this.props.customerDeleteItems(selectedItems);
 
         this.setState({
           selectedItems: []
         });        
-      }
     }
   }
 
@@ -156,5 +149,14 @@ class CustomerList extends React.Component {
     )
   }
 }
+
+CustomerList.propTypes = {
+  customers: PropTypes.array.isRequired,
+  customerFormVisible: PropTypes.bool.isRequired,
+  customerHideForm: PropTypes.func.isRequired,
+  customerLoadData: PropTypes.func.isRequired,
+  customerDeleteItems: PropTypes.func.isRequired
+}
+
 
 export default withRouter(CustomerList);

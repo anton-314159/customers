@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 
 import './Select.scss';
 
@@ -44,4 +45,13 @@ const Select = ({ name, items, selectedItem, onChange }) => {
     )
 }
 
+
+Select.propTypes = {
+    name: PropTypes.string,
+    selectedItem: PropTypes.string,
+    items: PropTypes.array,
+    onChange: PropTypes.func
+}
+
+  
 export default Select;

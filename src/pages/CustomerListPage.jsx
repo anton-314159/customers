@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { withRouter } from 'react-router-dom';
 
@@ -21,13 +22,12 @@ class CustomerListPage extends React.Component {
 
     switch(action) {
       case 'new':
-          if (customerShowForm) 
-            customerShowForm();
+          customerShowForm();
         break;
 
       case 'edit':
         const customer = customers.filter(c => c.id === parseInt(id));    
-        if (customer.length && customerShowForm) {
+        if (customer.length) {
           customerShowForm(customer[0]);
         }
         break;
@@ -44,6 +44,11 @@ class CustomerListPage extends React.Component {
       </DefaultTemplate>
     )
   }
+}
+
+CustomerListPage.propTypes = {
+  customers: PropTypes.array.isRequired,
+  customerShowForm: PropTypes.func.isRequired
 }
 
 export default withRouter(CustomerListPage);

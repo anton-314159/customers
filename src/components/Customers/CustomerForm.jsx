@@ -1,5 +1,6 @@
 
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './CustomerForm.scss';
 
@@ -61,8 +62,10 @@ class CustomerForm extends React.Component {
         this.sidebarForm.current.classList.remove("show");
 
         setTimeout(() => { 
-            this.props.customerHideForm() 
-            this.props.onClose();
+            this.props.customerHideForm();
+            
+            if (this.props.onClose) 
+                this.props.onClose();
         }, 200);
     }
 
@@ -73,8 +76,7 @@ class CustomerForm extends React.Component {
             this.setState({
                 customerNameError: true
             });
-        }
-        else if (this.props.customerSaveItem) {
+        } else {
             this.props.customerSaveItem(customer);
             this.onCloseClick();
         }
@@ -164,5 +166,13 @@ class CustomerForm extends React.Component {
         )
     }
 }
+
+CustomerForm.propTypes = {
+    customerFormVisible: PropTypes.bool.isRequired,
+    customerFormMetaData: PropTypes.object.isRequired,
+    customerHideForm: PropTypes.func.isRequired,
+    customerSaveItem: PropTypes.func.isRequired,
+    onClose: PropTypes.func
+  }
 
 export default CustomerForm;

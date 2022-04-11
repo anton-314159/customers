@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import './Grid.scss';
 
 class GridRow extends React.PureComponent {
@@ -42,4 +44,14 @@ class GridRow extends React.PureComponent {
     )
   }
 }
+
+GridRow.propTypes = {
+  item: PropTypes.object,
+  type: PropTypes.string,
+  className: PropTypes.string,
+  itemProps: PropTypes.array.isRequired,
+  checked: PropTypes.bool,
+  onChecked: PropTypes.func
+}
+
 export default GridRow;
